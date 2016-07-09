@@ -24,15 +24,13 @@ POL_System_TmpCreate "$PREFIX"
     POL_Wine_SelectPrefix "$PREFIX"
     POL_Wine_PrefixCreate "1.9.13"
 
-    POL_Call POL_Install_msvc100
-    POL_Wine_OverrideDLL "builtin,native" "msvcr100"
-    POL_Call POL_Install_d3dx9
-
     POL_SetupWindow_wait "Installing Microsoft Visual C++ 2010 Redistributable Package (x86)..." "$TITLE"
     POL_Wine "vcredist_x86.exe"
 
     POL_SetupWindow_wait "Installing FAF lobby..." "$TITLE"
     POL_Wine msiexec /i "Forged.Alliance.Forever-0.11.58-win32.msi"
+
+    POL_Call POL_Install_d3dx9 # required for game to run
 POL_System_TmpDelete
 
 POL_Shortcut "FAForever.exe" "$TITLE"
