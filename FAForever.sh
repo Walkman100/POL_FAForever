@@ -30,7 +30,7 @@ POL_System_TmpCreate "$PREFIX"
     POL_Wine "vcredist_x86.exe"
 
     POL_SetupWindow_wait "Installing FAF lobby..." "$TITLE"
-    POL_Wine "Forged.Alliance.Forever-0.11.58-win32.msi"
+    POL_Wine msiexec /i "Forged.Alliance.Forever-0.11.58-win32.msi"
 POL_System_TmpDelete
 
 POL_Shortcut "FAForever.exe" "$TITLE"
