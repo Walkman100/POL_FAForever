@@ -1,6 +1,6 @@
 #!/usr/bin/env playonlinux-bash
 # Date : (2016-07-09 01-08)
-# Last revision : (2016-07-09 01-08)
+# Last revision : (2016-07-09 20-44)
 # Wine version used : 1.9.13
 # Distribution used to test : Linux Mint 17.2 Rafaela
 # Author : Walkman
@@ -10,6 +10,8 @@ source "$PLAYONLINUX/lib/sources"
 TITLE="FAForever"
 PREFIX="FAForever"
 
+IMAGEURLS="https://raw.githubusercontent.com/Walkman100/POL_FAForever/master"
+POL_GetSetupImages "$IMAGEURLS/top.png" "$IMAGEURLS/left.png" "$TITLE"
 POL_SetupWindow_Init
 POL_Debug_Init
 
