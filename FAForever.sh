@@ -1,6 +1,6 @@
 #!/usr/bin/env playonlinux-bash
 # Date : (2016-07-09 01-08)
-# Last revision : (2016-07-26 01-07)
+# Last revision : (2016-08-02 12-12)
 # Wine version used : 1.9.13, 1.9.15
 # Distribution used to test : Linux Mint 17.2 Rafaela
 # Author : Walkman
@@ -26,12 +26,13 @@ POL_System_TmpCreate "$PREFIX"
 
     cd "$POL_System_TmpDir"
     POL_SetupWindow_wait "Installing Microsoft Visual C++ 2010 Redistributable Package (x86)..." "$TITLE"
-    POL_Wine "vcredist_x86.exe"
+    POL_Wine "vcredist_x86.exe" /passive
 
     POL_SetupWindow_wait "Installing FAF lobby..." "$TITLE"
     POL_Wine msiexec /i "Forged.Alliance.Forever-0.11.60-win32.msi" /q
 
     POL_Call POL_Install_d3dx9 # required for game to run
+    POL_Call POL_Install_directx9 # required for game audio
 POL_System_TmpDelete
 
 POL_Shortcut "FAForever.exe" "$TITLE"
