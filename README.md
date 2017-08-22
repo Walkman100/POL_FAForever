@@ -6,4 +6,5 @@ The official `Microsoft Visual C++ 2010 Redistributable Package (x86)` (vcredist
 ![not installed](https://i.imgur.com/bvFdQ1j.png)
 
 Direct3D 9 (`POL_Install_d3dx9`) is needed by SC:FA
+
 DirectX 9 (`POL_Install_directx9`) is needed for in-game sound, see [#1](https://github.com/Walkman100/POL_FAForever/issues/1)
