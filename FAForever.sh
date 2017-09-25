@@ -1,7 +1,7 @@
 #!/usr/bin/env playonlinux-bash
 # Date : (2016-07-09 01-08)
-# Last revision : (2017-03-21 12-43)
-# Wine version used : 1.9.13, 1.9.10, 1.9.15, 1.9.24
+# Last revision : (2017-09-25 22-09)
+# Wine version used : 1.9.13, 1.9.10, 1.9.15, 1.9.24, 2.8, 2.17
 # Distribution used to test : Linux Mint 17.3 Rosa
 # Author : Walkman
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -22,7 +22,7 @@ POL_System_TmpCreate "$PREFIX"
     POL_Download "https://github.com/FAForever/client/releases/download/0.14.0/Forged.Alliance.Forever-0.14.0-win32.msi" "cd476afba37f53bb5f925a51f436a132"
 
     POL_Wine_SelectPrefix "$PREFIX"
-    POL_Wine_PrefixCreate "1.9.24"
+    POL_Wine_PrefixCreate "2.17"
 
     cd "$POL_System_TmpDir"
     POL_SetupWindow_wait "Installing Microsoft Visual C++ 2010 Redistributable Package (x86)..." "$TITLE"
