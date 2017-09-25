@@ -19,7 +19,7 @@ POL_SetupWindow_presentation "$TITLE" "github.com/orgs/FAForever/people" "fafore
 POL_System_TmpCreate "$PREFIX"
     cd "$POL_System_TmpDir"
     POL_Download "https://download.microsoft.com/download/5/B/C/5BC5DBB3-652D-4DCE-B14A-475AB85EEF6E/vcredist_x86.exe" "b88228d5fef4b6dc019d69d4471f23ec"
-    POL_Download "https://github.com/FAForever/client/releases/download/0.12.4/Forged.Alliance.Forever-0.12.4-win32.msi" "1300726a2957136d46b07e53d63ff7ad"
+    POL_Download "https://github.com/FAForever/client/releases/download/0.14.0/Forged.Alliance.Forever-0.14.0-win32.msi" "cd476afba37f53bb5f925a51f436a132"
 
     POL_Wine_SelectPrefix "$PREFIX"
     POL_Wine_PrefixCreate "1.9.24"
@@ -29,7 +29,7 @@ POL_System_TmpCreate "$PREFIX"
     POL_Wine "vcredist_x86.exe" /passive
 
     POL_SetupWindow_wait "Installing FAF lobby..." "$TITLE"
-    POL_Wine msiexec /i "Forged.Alliance.Forever-0.12.4-win32.msi" /q
+    POL_Wine msiexec /i "Forged.Alliance.Forever-0.14.0-win32.msi" /q
 
     POL_Call POL_Install_d3dx9 # required for game to run
     POL_Call POL_Install_directx9 # required for game audio
