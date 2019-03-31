@@ -1,8 +1,8 @@
 #!/usr/bin/env playonlinux-bash
 # Date : (2016-07-09 01-08)
-# Last revision : (2017-09-25 22-09)
-# Wine version used : 1.9.13, 1.9.10, 1.9.15, 1.9.24, 2.8, 2.17
-# Distribution used to test : Linux Mint 17.3 Rosa
+# Last revision : (2019-01-01 01-04)
+# Wine version used : 1.9.13, 1.9.10, 1.9.15, 1.9.24, 2.8, 2.17, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5
+# Distribution used to test : Linux Mint 17.3 Rosa, macOS 10.13.6
 # Author : Walkman
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
@@ -22,7 +22,7 @@ POL_System_TmpCreate "$PREFIX"
     POL_Download "https://github.com/FAForever/client/releases/download/0.14.0/Forged.Alliance.Forever-0.14.0-win32.msi" "cd476afba37f53bb5f925a51f436a132"
 
     POL_Wine_SelectPrefix "$PREFIX"
-    POL_Wine_PrefixCreate "2.17"
+    POL_Wine_PrefixCreate "4.5"
 
     cd "$POL_System_TmpDir"
     POL_SetupWindow_wait "Installing Microsoft Visual C++ 2010 Redistributable Package (x86)..." "$TITLE"
@@ -33,6 +33,7 @@ POL_System_TmpCreate "$PREFIX"
 
     POL_Call POL_Install_d3dx9 # required for game to run
     POL_Call POL_Install_directx9 # required for game audio
+    POL_Wine_OverrideDLL "native" "x3daudio1_2" # required for game to run on wine-4.3+
 POL_System_TmpDelete
 
 POL_Shortcut "FAForever.exe" "$TITLE"
